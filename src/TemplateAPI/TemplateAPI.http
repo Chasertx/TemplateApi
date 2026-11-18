@@ -1,0 +1,35 @@
+@host = http://localhost:5224
+@userId = 00000000-0000-0000-0000-000000000000
+
+### Get all users
+GET {{host}}/api/users
+Accept: application/json
+
+### Get user by id
+GET {{host}}/api/users/{{userId}}
+Accept: application/json
+
+### Create user
+POST {{host}}/api/users
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "phoneNumber": "555-123-4567"
+}
+
+### Update user
+PUT {{host}}/api/users/{{userId}}
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@example.com",
+  "phoneNumber": null
+}
+
+### Delete user
+DELETE {{host}}/api/users/{{userId}}
